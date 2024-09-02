@@ -16,11 +16,18 @@ def find_combinations(target_sum, length = None):
 
     # filter combinations by target sum
     results = [comb for comb in combinations if sum(comb) == target_sum]
-
-    print(results, "results")
+    return results
 
     
 
+target_sum = int(input("What is the target sum? "))
+length = input("How long should the combinations be? (press Enter for all possible lengths) ")
 
-find_combinations(15, 4)
-find_combinations(15)
+if length:
+    length = int(length)
+else:
+    length = None
+
+combinations =  find_combinations(target_sum, length)
+print(combinations)
+
